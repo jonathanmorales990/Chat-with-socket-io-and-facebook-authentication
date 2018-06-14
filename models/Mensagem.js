@@ -4,11 +4,11 @@ var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
 
     
-	data			: { type: Date, default: Date.now },
-    de              : String,
-    para            : String,
-    mensagemEnviada : String,
-    readed			: { type: Boolean, default: false }
+	data: { type: Date, default: Date.now },
+	de: String,
+	para: String,
+	mensagemEnviada: String,
+	readed: { type: Boolean, default: false }
 
 
 },{collection: 'Mensagem'});
