@@ -136,19 +136,19 @@ io.sockets.on( "connection", function( socket ){
                     Mensagem.update({ de: data.id, para:socket.handshake.session.passport.user },
                         { readed: true } ,{multi: true} ,function(err, mensagem){
 
-                    if(err){
+                        if(err){
 
-                        socket.emit('requestedMensagemErro', data);
+                            socket.emit('requestedMensagemErro', data);
 
-                    }
-                    if(mensagem){
+                        }
+                        if(mensagem){
 
-                        socket.emit('requestedMensagem', data);
+                            socket.emit('requestedMensagem', data);
 
-                    }
+                        }
                         
                         
-                        });
+                    });
                 }          
         
         });
