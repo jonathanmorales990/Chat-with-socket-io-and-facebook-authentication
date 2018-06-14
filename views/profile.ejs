@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Inicio</title>
+		
+		<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.css">
+
+		<link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/
+		iconeHamburger.css">
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/
+		talkbubble.css">
+		
+		<link rel="stylesheet" type="text/css" href="/stylesheets/
+		dropdown.css">
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+		<script>
+		
+		var userNotification = new Array();
+
+		<% for (var i = 0; i < notification.length; i++) { %>
+
+				userNotification.push('<%=notification[i].de%>');
+
+		<% } %>	
+
+
+		</script>
+
+		<script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
+
+		<script type="text/javascript" src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="/vendor/socket.io-client/dist/socket.io.js"></script>
+
+		<script type="text/javascript" src="/javascripts/removeHashFacebook.js"></script>
+
+	</head>
+
+	<body>
+
+		<nav id="Navbar">
+
+			<div class="ContainerMenu Abrir HoverParaMenu">
+				<div id="nav-icon1">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+			</div>
+
+			<div class="ContainerMenuMens HoverParaMenu AtivarEvenlope">
+
+				<div class="containerMensagensNav">	
+					<div class="NumeroMenssagens"><%= notification.length %></div>
+					<i class="fa fa-envelope envelope" aria-hidden="true"></i>
+				</div>
+
+				<div class="dropdown-mensagens">
+
+				</div>
+			</div>
+
+
+
+
+
+			<% if (user.facebook.id) { %>
+			<a href="/sair/facebook">
+			<div class="ContainerSair HoverParaMenu">
+				<i class="fa fa-sign-out sair" aria-hidden="true"></i>
+				<p class="sairTexto">Sair</p>
+			</div>
+			</a>
+			<% } %>
+			<% if (user.local.email) { %>
+			<a href="/sair/local">
+			<div class="ContainerSair HoverParaMenu">
+				<i class="fa fa-sign-out sair" aria-hidden="true"></i>
+				<p class="sairTexto">Sair</p>
+			</div>
+			</a>
+			<% } %>
+
+
+
+		</nav>
+	
+		<div class="ContainerMenuLateral">
+
+			<% if (user.facebook.id) { %>
+					<% if (user.facebook.photo) { %>
+						<img id="profile-img" class="profile-img-card" src="<%= user.facebook.photo %>" />	
+					<% }else{ %>
+						<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+					<% } %>	
+			<% } %>
+
+			<% if (user.local.email) { %>
+					<% if (user.local.photo) { %>
+						<img id="profile-img" class="profile-img-card" src="<%= user.local.photo %>" />	
+					<% }else{ %>
+						<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+					<% } %>	
+			<% } %>
+
+
+
+			<% if (user.local.email) { %>
+			<h1 class="PerfilNomeTexto"><%= user.local.nome +" "+ user.local.sobrenome %></h1>
+			<% } %>
+			<% if (user.facebook.id) { %>
+			<h1 class="PerfilNomeTexto"><%= user.facebook.name %></h1>
+			<% } %>
+
+
+
+			<h1 class="pessoasTexto">Pessoas</h1>
+
+			<div class="ContainerUsuarios">
+			<% if(allUsers){ %>
+			<% for (var i = 0; i < allUsers.length; i++) { %>
+
+				<% if (allUsers[i].local.email) { %>
+			  	 	<input class ="UsuariosID" type="hidden" name="id" value="<%= allUsers[i]._id %>">
+				    <span class="usuarioNomeMenuLateal AtivarChat"><span class="online"></span>
+					<img class="usuarioNomeMenuLatealImage" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+					<span class="usuarioNomeMenuLatealNome"><%= allUsers[i].local.nomecompleto %></span></span>
+
+				<% } %>
+
+				<% if (allUsers[i].facebook.id) { %>
+			  	 	<input class ="UsuariosID" type="hidden" name="id" value="<%= allUsers[i]._id %>">
+				    <span class="usuarioNomeMenuLateal AtivarChat"><span class="online"></span>
+					<img class="usuarioNomeMenuLatealImage" src="<%= allUsers[i].facebook.photo %>"/>
+					<span class="usuarioNomeMenuLatealNome"><%= allUsers[i].facebook.name %></span></span>
+					
+				<% } %>		
+			<% } %>
+			<% } %>
+			</div>
+
+		</div>
+		<div class="separadorBarra"></div>
+		<div class="corpo" style="width: 100%; height: 100% ; position: fixed; z-index: 1;"></div>
+	</body>
+
+	<script type="text/javascript" src="/javascripts/clientesocket.js"></script>
+	<script type="text/javascript" src="/javascripts/BotaAnimations.js"></script>
+	<script type="text/javascript" src="/javascripts/MenuAnimations.js"></script>
+	
+
+</html>

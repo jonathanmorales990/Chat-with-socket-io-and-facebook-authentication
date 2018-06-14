@@ -1,0 +1,89 @@
+.trianguloESQ{
+
+display: inline-block;
+width: 0;
+height: 0;
+float: left;
+position: relative;
+border-style: solid;
+border-width: 3.5px 0 9.5px 10px;
+top: 10px;
+margin: 0px;
+border-color: transparent transparent transparent lightgrey;
+line-height: 0px;
+
+_border-color: #000000 #000000 #000000 #007bff;
+_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+.trianguloDIR{
+top: 10px;
+margin: 0px;
+display: inline-block;
+position: relative;
+float: left;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 3.5px 10px 9.5px 0;
+border-color: transparent #cbe4ff transparent transparent;
+line-height: 0px;
+_border-color: #000000 #007bff #000000 #000000;
+_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+.corpoMensagemDIR{
+
+    border: 0.5px rgba(203, 228, 255, 0.19) outset;
+	position: relative;
+	float: left;
+	padding: 10px;
+	border-radius: 12px;
+	width:calc(100% - 20px);
+	height: 100%;
+	display: inline-block;
+	background-color:#cbe4ff; 
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+.corpoMensagemESQ{
+
+    border: 0.5px rgba(211, 211, 211, 0.19) inset;
+	position: relative;
+	float: left;
+	padding: 10px;
+	border-radius: 12px;
+	width:calc(100% - 10px);
+	height: 100%;
+	display: inline-block;
+	background-color:lightgrey; 
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+.corpoMensagemErro{
+
+    border: 0.5px rgb(255, 255, 255) inset;
+	position: relative;
+	top: 50%;
+	left: 50%;
+
+	transform:  translateY(-50%) translateX(-50.1%);
+ 	 -webkit-transform: translateY(-50%) translateX(-50.1%);
+ 	 -ms-transform: translateY(-50%) translateX(-50.1%);
+
+	padding: 10px;
+	border-radius: 12px;
+	width:calc(90%);
+	    color: #f1f1f1;
+    background-color: #ff7272;
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}

@@ -1,0 +1,24 @@
+`bower search <nome do pacote>`
+
+`bower install <nome do pacote>`
+
+`bower update <nome do pacote>`
+
+`bower list <nome do pacote>`
+
+`bower uninstall <nome do pacote>` 
+
+npm install -g express-generator 
+express -h
+express --ejs
+
+$ npm install -g npm-check-updates
+$ npm-check-updates -u
+$ npm install 
+
+https://scotch.io/tutorials/mean-app-with-angular-2-and-the-angular-cli
+https://mdbootstrap.com/javascript/alerts/
+https://www.w3schools.com/howto/howto_js_snackbar.asp
+https://codepen.io/designcouch/pen/Atyop
+http://plnkr.co/edit/mA7dzreUlqqTJZqodAzv?p=preview
+https://www.codementor.io/tips/0217388244/sharing-passport-js-sessions-with-both-express-and-socket-io

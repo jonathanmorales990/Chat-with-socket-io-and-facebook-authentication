@@ -1,0 +1,23 @@
+{
+  "name": "chat",
+  "description": "",
+  "main": "",
+  "authors": [
+    "johnmorales990@gmail.com <johnmorales990@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "bootstrap": "^3.3.7",
+    "socket.io-client": "^2.0.3"
+  }
+}

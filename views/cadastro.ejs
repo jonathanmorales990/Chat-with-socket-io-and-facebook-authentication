@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+
+    <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
+    
+	<script type="text/javascript" src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+	
+ <title><%= title %></title>
+  </head>
+
+  	<body>
+			<div id='faloader' style="position: fixed;"></div>
+			<div class="card card-container">
+		            
+		            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+		            <p id="profile-name" class="profile-name-card"></p>
+		            <form class="form-signin" action="/cadastro" method="post">
+		                <span id="reauth-email" class="reauth-email"></span>
+
+		                <input type="text" id="inputPassword" class="form-control" placeholder="Nome" name="nome" required autofocus>
+		                <input type="text" id="inputPassword" class="form-control" placeholder="Sobrenome" name="sobrenome" required >
+		                <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required >
+		                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" name="password" required>
+		               
+						<% if (messageErro.length > 0) { %>
+							<div style="margin-bottom: 10px;" class="alert alert-danger"><%= messageErro %></div>
+						<% } %>
+						<% if (messageSucesso.length > 0) { %>
+							<div style="margin-bottom: 10px;" class="alert alert-success"><%= messageSucesso %></div>
+						<% } %>
+
+		                <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Cadastrar-se</button>
+
+		            	<div class="bottom">
+		                 
+		                </div>
+		            </form>
+		            <a href="/login" class="cadastre-se">
+		                Voltar para página de login?
+		            </a>
+
+		        </div>
+
+	</body>
+</html>
