@@ -491,9 +491,11 @@ $(document).ready(function(){
 				});
 				
 				var numeroNotifications = parseInt($('.NumeroMenssagens').text());
-
-				numeroNotifications -= 1;
-
+				
+				if( numeroNotifications != 0 ){
+					numeroNotifications -= 1;
+				}
+				
 				$('.NumeroMenssagens').empty();
 				$('.NumeroMenssagens').append(numeroNotifications);
 
