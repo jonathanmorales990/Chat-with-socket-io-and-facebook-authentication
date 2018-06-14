@@ -4,8 +4,8 @@ var passport = require('passport');
 
 
 router.get('/', jaTaLogado, function(req, res, next) {
- return res.render('login.ejs',  { message: req.flash('loginMessage'),title: 'Login' });
-  });
+  return res.render('login.ejs',  { message: req.flash('loginMessage'),title: 'Login' });
+});
 
 router.post('/',jaTaLogado, passport.authenticate('local-login', {
 			successRedirect : '/', // redirect to the secure profile section

@@ -11,20 +11,20 @@ router.get('/', isLoggedIn , function(req, res, next) {
 		
 		if(err){
 			
-     		 return res.redirect(303,"/login");
+			return res.redirect(303,"/login");
 		
 		}
 
 		if(!model){
 
-			 return res.render('profile.ejs', {user : req.user});
+			return res.render('profile.ejs', {user : req.user});
 			 
 		}
  
 		if(model){
 
-			  var userId = req.user._id.toString();
-			  Mensagem.aggregate([
+			userId = req.user._id.toString();
+			Mensagem.aggregate([
 			        // Matching pipeline, similar to find
 			        { 
 			            "$match": { 
@@ -59,7 +59,7 @@ router.get('/', isLoggedIn , function(req, res, next) {
 			                "mensagemEnviada": 1,
 			                "data": 1
 			            }
-			        }], function(err, mensagem){
+			}], function(err, mensagem){
 			                                    
 			                    if (err){
 
