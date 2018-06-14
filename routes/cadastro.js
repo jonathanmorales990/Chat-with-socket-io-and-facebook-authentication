@@ -5,9 +5,9 @@ var passport = require('passport');
 
 router.get('/', function(req, res, next) {
 
-	 return res.render('cadastro.ejs',  { messageErro: req.flash('signupMessageError'),
-	 									  messageSucesso: req.flash('signupMessageSucess'),					
-	 									  title: 'Cadastro' });
+	 return res.render('cadastro.ejs',  {	messageErro: req.flash('signupMessageError'),
+											messageSucesso: req.flash('signupMessageSucess'),					
+											title: 'Cadastro' });
   
 });
 

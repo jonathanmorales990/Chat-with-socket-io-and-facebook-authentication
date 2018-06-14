@@ -22,7 +22,7 @@ router.get('/local',isLoggedIn, function(req, res) {
 
 
 function isLoggedIn(req, res, next) {
-	 if(req.isAuthenticated()){
+	if(req.isAuthenticated()){
       //if user is looged in, req.isAuthenticated() will return true 
       return next();
       

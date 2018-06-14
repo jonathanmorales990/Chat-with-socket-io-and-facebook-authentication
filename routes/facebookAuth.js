@@ -8,14 +8,5 @@ router.get('/callback', passport.authenticate('facebook', {
 				successRedirect : '/',
 				failureRedirect : '/login'
 			}));
-			
-/*
-router.get('/callback',passport.authenticate('facebook'), function(req, res, next) {
-		
-
-	  return next();
-  		
-});*/
-
 
 module.exports = router;

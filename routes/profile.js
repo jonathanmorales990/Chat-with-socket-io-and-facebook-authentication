@@ -85,7 +85,7 @@ router.get('/', isLoggedIn , function(req, res, next) {
 }); 
 
 function isLoggedIn(req, res, next) {
-	 if(req.isAuthenticated()){
+	if(req.isAuthenticated()){
       //if user is looged in, req.isAuthenticated() will return true 
       return next();
       
