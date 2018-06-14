@@ -86,14 +86,14 @@ router.get('/', isLoggedIn , function(req, res, next) {
 
 function isLoggedIn(req, res, next) {
 	if(req.isAuthenticated()){
-      //if user is looged in, req.isAuthenticated() will return true 
-      return next();
+	//if user is looged in, req.isAuthenticated() will return true 
+		return next();
       
-    }else{
+	}else{
 
-      return res.redirect(303,"/login");
+		return res.redirect(303,"/login");
     
-    }
+	}
 }
 
 module.exports = router;
