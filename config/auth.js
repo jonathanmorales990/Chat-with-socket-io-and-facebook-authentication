@@ -4,9 +4,9 @@
 module.exports = {
 
 	'facebookAuth' : {
-		'clientID' 		: '1384886724907362', // your App ID
-		'clientSecret' 	: '8b50d21d1e31ee1a535c393afcefd774', // your App Secret
-		'callbackURL' 	: 'http://localhost:8080/auth/facebook/callback'
+		'clientID' 		: '180068836015039', // your App ID
+		'clientSecret' 	: 'df26bb79969e62ab72822128b3ca2a14', // your App Secret
+		'callbackURL' 	: 'https://fortalk.herokuapp.com/auth/facebook/callback'
 	}
 
 };
