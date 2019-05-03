@@ -67,15 +67,15 @@ module.exports = function(io, session) {
       });
     });
 
-   socket.on('requestMensagem', function (data) {
-        Mensagem.find( { $or: [ { de: socket.handshake.session.passport.user , para:data.id }, 
-            { de: data.id, para:socket.handshake.session.passport.user  },]},  
-          function(err, mensagem){
+    socket.on('requestMensagem', function (data) {
+      Mensagem.find( { $or: [ { de: socket.handshake.session.passport.user , para:data.id }, { de: data.id, para:socket.handshake.session.passport.user  },]},  
+        function(err, mensagem){
+        
             if (err) socket.emit('requestedMensagemErro', data);
 
-            if(!mensagem.length){
+            if (!mensagem.length){
               socket.emit('requestedMensagem', data);
-            }else{
+            } else {
 
               data.mensagem = mensagem;
 
@@ -93,7 +93,7 @@ module.exports = function(io, session) {
     });
 
     socket.on('requestNotifications', function(data){
-          Mensagem.aggregate([
+      Mensagem.aggregate([
           // Matching pipeline, similar to find
           { 
               "$match": { 
