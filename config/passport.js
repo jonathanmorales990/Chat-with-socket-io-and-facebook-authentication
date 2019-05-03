@@ -1,5 +1,5 @@
 var FacebookStrategy = require('passport-facebook').Strategy;
-var LocalStrategy    = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 
 // load up the user model
 var User = require('../models/User');
