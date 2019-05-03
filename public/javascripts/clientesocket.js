@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-    var idDeEnvio;
+	var idDeEnvio;
 	var defaultPhoto = '//ssl.gstatic.com/accounts/ui/avatar_2x.png';
 	var socket = io.connect('/');
 	var users = new Array();
