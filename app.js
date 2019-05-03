@@ -1,27 +1,25 @@
 "use strict";
 
-var express      = require('express');
-var path         = require('path');
-var favicon      = require('serve-favicon');
-var logger       = require('morgan');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var passport     = require('passport');
-var mongoose     = require('mongoose');
-var flash        = require('connect-flash');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var mongoose = require('mongoose');
+var flash = require('connect-flash');
 mongoose.Promise = require('bluebird');
-var cors         = require('cors');
-var socket       = require('socket.io');
-//plugin para transactions em node
-/*var Fawn         = require('fawn');*/
-var configDB     = require('./config/database.js');
+var cors = require('cors');
+var socket = require('socket.io');
+var configDB = require('./config/database.js');
 
 //=================== ROTAS ===========================================
 var facebookAuth = require('./routes/facebookAuth');               /// |
-var profile      = require('./routes/profile');                    /// |
-var loginRoute   = require('./routes/login');                      /// | 
-var cadastroRoute= require('./routes/cadastro');                   /// | 
-var sairRoute    = require('./routes/sair');                       /// |
+var profile = require('./routes/profile');                         /// |
+var loginRoute = require('./routes/login');                        /// | 
+var cadastroRoute = require('./routes/cadastro');                  /// | 
+var sairRoute = require('./routes/sair');                          /// |
 //=====================================================================
 
 var session = require("express-session")({
@@ -31,17 +29,11 @@ var session = require("express-session")({
 });
 
 var app = express();
-var io = socket();
 
+var io = socket();
 app.io = io;
 
-
 app.use(flash());
-
-//inicialização
-/*Fawn.init(mongoose);
-var task = Fawn.Task();
-*/
 
 app.use(session);
 
@@ -74,13 +66,11 @@ db.on('disconnected', function() {
 
 mongoose.connect(configDB.url, {server:{auto_reconnect:true}});
 
-
 process.on('SIGINT', function(params) {
   console.log('Tchau!');
   db.close();
   process.exit();
 });
-
 
 require('./config/socketio')(io, session);
 require('./config/passport')(passport);
@@ -101,8 +91,6 @@ app.use('/sair',sairRoute);
 app.use('/login', loginRoute);
 app.use('/auth/facebook', facebookAuth);
 app.use('/cadastro', cadastroRoute);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
