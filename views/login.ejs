@@ -18,40 +18,38 @@
 	</head>
 
   	<body>
-			<div id='faloader' style="position: fixed;"></div>
-			<div class="card card-container">
-		            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-		            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-		            <p id="profile-name" class="profile-name-card"></p>
-		            <form class="form-signin" action="/login" method="post">
-		                <span id="reauth-email" class="reauth-email"></span>
-		                <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
-		                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" name="password" required>
-		               	
-		               <% if (message.length > 0) { %>
-							<div style="margin-bottom: 10px;" class="alert alert-danger"><%= message %></div>
-						<% } %>
-		                <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Entrar</button>
+		<div id='faloader' style="position: fixed;"></div>
+		<div class="card card-container">
+		    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+		    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+		    <p id="profile-name" class="profile-name-card"></p>
+		    <form class="form-signin" action="/login" method="post">
+			<span id="reauth-email" class="reauth-email"></span>
+			<input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+			<input type="password" id="inputPassword" class="form-control" placeholder="Senha" name="password" required>
 
-		            	<div class="bottom">
-		                 
-		                    <a style='padding: 10px; width: 49%;' class="btn btn-danger btn-sm" rel="publisher">
-		                        <i style="font-size: 18px;" class="fa fa-google-plus"></i>
-		                    </a>
-							<a style='padding: 10px; width: 49.5%;' class="btn btn-primary btn-sm facebookLogin" href="/auth/facebook/">
-		                  
-		                        <i style="font-size: 18px;" class="fa fa-facebook"></i>
-		                    </a>
-		                    
-		                </div>
-		            </form><!-- /form -->
-		            <a href="/cadastro" class="cadastre-se">
-		                Cadastrar-se
-		            </a>
-		            <a class="EsqueceuSenha">
-		                Esqueceu sua senha?
-		            </a>
-		        </div><!-- /card-container -->
+			<% if (message.length > 0) { %>
+				<div style="margin-bottom: 10px;" class="alert alert-danger"><%= message %></div>
+			<% } %>
+			<button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Entrar</button>
 
+			<div class="bottom">
+
+				<a style='padding: 10px; width: 49%;' class="btn btn-danger btn-sm" rel="publisher">
+					<i style="font-size: 18px;" class="fa fa-google-plus"></i>
+				</a>
+				<a style='padding: 10px; width: 49.5%;' class="btn btn-primary btn-sm facebookLogin" href="/auth/facebook/">
+					<i style="font-size: 18px;" class="fa fa-facebook"></i>
+				</a>
+
+			</div>
+		    </form><!-- /form -->
+		    <a href="/cadastro" class="cadastre-se">
+			Cadastrar-se
+		    </a>
+		    <a class="EsqueceuSenha">
+			Esqueceu sua senha?
+		    </a>
+		</div><!-- /card-container -->
 	</body>
 </html>
